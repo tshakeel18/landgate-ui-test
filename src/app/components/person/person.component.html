@@ -1,0 +1,51 @@
+<ng-container *ngIf="{
+  loaded: loaded$ | async,
+  person: person$ | async
+} as state">
+  <ng-container *ngIf="state.loaded else loaderTpl">
+    <div class="container mt-4">
+      <div class="col-md-12">
+        <!-- Back button -->
+        <button class="btn btn-secondary btn-back d-flex justify-content-end" routerLink="../">
+          Back
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-6 mt-4">
+          <div class="row">
+            <div class="col-6"><strong>First Name</strong></div>
+            <div class="col-6">{{state.person?.firstName}}</div>
+          </div>
+        </div>
+
+        <div class="col-6  mt-4">
+          <div class="row">
+            <div class="col-6"><strong>Last Name</strong></div>
+            <div class="col-6">{{state.person?.lastName}}</div>
+          </div>
+        </div>
+
+        <div class="col-6  mt-4">
+          <div class="row">
+            <div class="col-6"><strong>Age</strong></div>
+            <div class="col-6">{{state.person?.age}}</div>
+          </div>
+        </div>
+
+        <div class="col-6  mt-4">
+          <div class="row">
+            <div class="col-6"><strong>Job Title</strong></div>
+            <div class="col-6">{{state.person?.jobTitle}}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #loaderTpl>
+  <div class="container loader-container">
+    <div class="spin"></div>
+  </div>
+</ng-template>

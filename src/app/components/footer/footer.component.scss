@@ -1,0 +1,12 @@
+:host {
+  color: #fff;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: #06c!important;
+  }
+}

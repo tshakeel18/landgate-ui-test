@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
+  {path: 'people', loadChildren: () => import('./components/people-ngrx/people-ngrx.module').then(m => m.PeopleNgrxModule)}
 ];
 
 @NgModule({
